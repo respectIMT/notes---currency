@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
-import 'package:test1/application/notes/note_provider.dart';
-import 'package:test1/presentation/pages/notes/note.dart';
+import 'package:test1/application/home/home_provider.dart';
+import 'package:test1/presentation/pages/home/home.dart';
 
-void main() async {
-  await Hive.openBox('note_database');
+void main() /*async*/ {
+  // await Hive.openBox('note_database');
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => NoteProvider())],
+      providers: [ChangeNotifierProvider(create: (context) => HomeProvider())],
       child: const MyApp(),
     ),
   );
@@ -37,7 +36,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const NotePage(),
+      home: const HomePage(),
     );
   }
 }
