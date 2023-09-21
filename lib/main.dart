@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:test1/application/currency/currency_provider.dart';
 import 'package:test1/application/home/home_provider.dart';
+import 'package:test1/application/notes/note_provider.dart';
 import 'package:test1/presentation/pages/home/home.dart';
 
-void main() /*async*/ {
-  // await Hive.openBox('note_database');
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox('note_database');
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => HomeProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (context) => HomeProvider()),
+        ChangeNotifierProvider(create: (context) => NoteProvider()),
+        ChangeNotifierProvider(create: (context) => CurrencyProvider()),
+      ],
       child: const MyApp(),
     ),
   );

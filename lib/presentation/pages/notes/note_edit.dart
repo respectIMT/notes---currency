@@ -16,10 +16,7 @@ class EditNote extends StatefulWidget {
 }
 
 class _EditNoteState extends State<EditNote> {
-  
-
   QuillController _controller = QuillController.basic();
-
 
   @override
   void initState() {
@@ -63,6 +60,7 @@ class _EditNoteState extends State<EditNote> {
             } else {
               updateNote();
             }
+
             Navigator.pop(context);
           },
         ),
@@ -71,29 +69,6 @@ class _EditNoteState extends State<EditNote> {
         children: [
           QuillToolbar.basic(
             controller: _controller,
-            showAlignmentButtons: false,
-            showBackgroundColorButton: false,
-            showCenterAlignment: false,
-            showColorButton: false,
-            showCodeBlock: false,
-            showDirection: false,
-            showFontFamily: false,
-            showDividers: false,
-            showIndent: false,
-            showHeaderStyle: false,
-            showLink: false,
-            showSearchButton: false,
-            showInlineCode: false,
-            showQuote: false,
-            showListNumbers: false,
-            showListBullets: false,
-            showClearFormat: false,
-            showBoldButton: false,
-            showFontSize: false,
-            showItalicButton: false,
-            showUnderLineButton: false,
-            showStrikeThrough: false,
-            showListCheck: false,
           ),
           Expanded(
             child: Container(

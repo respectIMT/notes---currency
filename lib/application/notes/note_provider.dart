@@ -3,8 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:test1/infrastructure/local/hive_database.dart';
 import 'package:test1/infrastructure/model/note_model.dart';
+import 'package:test1/presentation/pages/notes/note_edit.dart';
 
 class NoteProvider extends ChangeNotifier {
+  NoteProvider() {
+    init();
+  }
+
+  void init() {}
+
   final db = HiveDatabase();
   // overall list of notes
   List<Note> allNotes = [];
@@ -38,5 +45,29 @@ class NoteProvider extends ChangeNotifier {
   void delateNote(Note note) {
     allNotes.remove(note);
     notifyListeners();
+  }
+
+  void createNewNote(BuildContext context) {
+    int id = allNotes.length;
+    Note newNote = Note(
+      id: id,
+      text: "",
+    );
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditNote(note: newNote, isNewNote: false),
+      ),
+    );
+    goToNotePage(newNote, true, context);
+  }
+
+  void goToNotePage(Note note, bool isNewNote, BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditNote(note: note, isNewNote: false),
+      ),
+    );
   }
 }
