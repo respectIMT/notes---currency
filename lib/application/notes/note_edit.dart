@@ -1,6 +1,6 @@
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class NoteEditProvider extends ChangeNotifier{
+// class NoteEditProvider extends ChangeNotifier{
   
-}
+// }

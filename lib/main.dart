@@ -4,7 +4,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:test1/application/currency/currency_provider.dart';
 import 'package:test1/application/home/home_provider.dart';
-import 'package:test1/application/notes/note_provider.dart';
 import 'package:test1/presentation/pages/home/home.dart';
 
 void main() async {
@@ -14,7 +13,6 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => HomeProvider()),
-        ChangeNotifierProvider(create: (context) => NoteProvider()),
         ChangeNotifierProvider(create: (context) => CurrencyProvider()),
       ],
       child: const MyApp(),
