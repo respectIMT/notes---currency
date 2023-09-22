@@ -66,6 +66,7 @@ dependencies:
   
 
   # Localization
+  easy_localization: ^3.0.2
 
 
   # Navigation

@@ -1,5 +1,7 @@
 // Created by Muhammed Tolkinov on 14-October-2022
 
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
