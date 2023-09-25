@@ -1,4 +1,4 @@
-import 'package:test1/presentation/routes/entity/coordinate.dart';
+import 'coordinate.dart';
 
 class Routes implements Coordinate {
   const Routes._({
